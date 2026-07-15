@@ -19,7 +19,8 @@ npm run typecheck  # 타입 검사만
 ```
 src/
 ├─ main.tsx                # 엔트리 포인트
-├─ App.tsx                 # 조립(composition)만 담당
+├─ Root.tsx                # 랜딩 ↔ 서비스 전환 (접속 시 소개 먼저)
+├─ App.tsx                 # 서비스 본체 조립(composition)만 담당
 ├─ index.css              # Tailwind + 전역 스타일/애니메이션
 │
 ├─ types/
@@ -65,9 +66,16 @@ src/
    │  └─ packing/          # 패킹 탭 하위 부품
    │     ├─ MonthPicker.tsx
    │     └─ PackingChecklist.tsx
-   └─ modal/
-      └─ CountrySelectorModal.tsx
+   ├─ modal/
+   │  └─ CountrySelectorModal.tsx
+   └─ landing/                     # 서비스 소개 랜딩 페이지
+      ├─ LandingPage.tsx           # 페인 → 기능 → 신뢰성 → CTA
+      └─ landingContent.ts         # 랜딩 카피/데이터(마크업과 분리)
 ```
+
+## 화면 흐름
+
+접속 시 **서비스 소개 랜딩**(`LandingPage`)이 먼저 뜹니다. 불편함 → 제공 정보(5개 영역) → 신뢰성(공식 출처) 순으로 소개하고, 하단의 **`TravLight 이용하기 →`** 버튼(또는 상단 `바로 시작`)을 누르면 실제 서비스(`App`)로 전환됩니다. 전환은 `Root.tsx`의 상태 하나로 관리합니다.
 
 ## 설계 원칙
 
