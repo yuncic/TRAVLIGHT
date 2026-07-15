@@ -1,4 +1,4 @@
-import { FEATURES, PAIN_POINTS, TRUST_SOURCES } from './landingContent';
+import { FEATURES, PAIN_POINTS, TRUST_SOURCES } from "./landingContent";
 
 interface LandingPageProps {
   /** 'TravLight 이용하기' 클릭 시 실제 서비스로 진입 */
@@ -61,8 +61,8 @@ export function LandingPage({ onEnter }: LandingPageProps) {
             <span className="text-brand-500">한 곳에서 공식 출처로.</span>
           </h1>
           <p className="mt-6 text-sm lg:text-lg text-slate-500 font-medium leading-relaxed max-w-xl mx-auto">
-            비자·입국 서류부터 세관 반입 규정, 항공사 수하물, 날씨·패킹, 현지 꿀팁까지 — 흩어진 여행 준비 정보를 TravLight
-            하나로 확인하세요.
+            비자·입국 서류부터 세관 반입 규정, 항공사 수하물, 날씨·패킹, 현지 꿀팁까지 <br />
+            흩어진 여행 준비 정보를 TravLight 하나로 확인하세요.
           </p>
           <div className="mt-9">
             <EnterButton onEnter={onEnter} label="TravLight 이용하기" />
@@ -119,7 +119,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
               <div
                 key={f.tag}
                 className={`bg-white rounded-3xl p-6 lg:p-8 shadow-soft border border-slate-100 flex gap-5 items-start ${
-                  idx === FEATURES.length - 1 ? 'lg:col-span-2' : ''
+                  idx === FEATURES.length - 1 ? "lg:col-span-2" : ""
                 }`}
               >
                 <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center">
