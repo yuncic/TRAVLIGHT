@@ -156,6 +156,55 @@ export const COUNTRIES: Country[] = [
         desc: "지하철이나 버스 안에서는 휴대폰을 무음 모드로 설정하고, 통화를 자제하는 것이 강력한 현지 매너입니다.",
       },
     ],
+    transport: {
+      driving: {
+        status: "운전 가능",
+        convention: "제네바협약(1949) 기반 국제운전면허증(IDP) 인정. 비엔나협약 IDP는 불인정됩니다.",
+        requirements: "IDP + 한국 운전면허증 원본 + 여권을 함께 소지. 상륙일로부터 1년간 유효합니다.",
+        note: "경찰이 도로에서 IDP 소지 여부를 실제로 확인합니다. 좌측통행이며 렌터카는 보통 만 18세 이상부터 가능합니다.",
+      },
+      modes: [
+        {
+          icon: "train",
+          name: "JR·지하철·전철",
+          desc: "전국이 촘촘하고 정시성이 뛰어나 도시 여행의 정답. Suica·Pasmo 등 IC카드 한 장이면 전철·버스·편의점까지 해결됩니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "bus",
+          name: "노선버스",
+          desc: "전철이 닿지 않는 지방·소도시에서 유용. 뒷문 승차·앞문 하차이며 IC카드 또는 정산기를 이용합니다.",
+          rating: "추천",
+        },
+        {
+          icon: "taxi",
+          name: "택시",
+          desc: "요금이 매우 비싸 단거리·심야·짐 많을 때만 권장. 호출 앱은 GO(고), 문은 자동으로 열립니다.",
+          rating: "상황별",
+        },
+        {
+          icon: "car",
+          name: "렌터카",
+          desc: "홋카이도·오키나와 등 대중교통이 약한 지역에서만 가성비. IDP 필수이며 좌측통행 적응이 필요합니다.",
+          rating: "상황별",
+        },
+      ],
+      summary: "도시는 IC카드(Suica·Pasmo)와 전철 조합이 정답. 택시 호출 앱은 GO, 현금도 어느 정도 챙기세요.",
+      links: [
+        {
+          name: "일본자동차연맹(JAF) · 외국 면허로 일본에서 운전하기",
+          url: "https://english.jaf.or.jp/driving-in-japan",
+        },
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
   {
     id: "US",
@@ -307,6 +356,55 @@ export const COUNTRIES: Country[] = [
         desc: "물건 가격표에는 주(State)별 소비세가 포함되어 있지 않아, 계산서 청구 시 최종 가격이 6~10% 정도 더 높게 나옵니다.",
       },
     ],
+    transport: {
+      driving: {
+        status: "조건부 가능",
+        convention: "주(州)별로 다릅니다. 다수 주가 한국 면허 + IDP를 인정하나 IDP를 요구하는 주도 있습니다.",
+        requirements: "IDP + 한국 운전면허증 원본 + 여권 소지 권장. 렌터카는 보통 만 21세 이상(25세 미만은 영차 추가요금).",
+        note: "방문할 각 주 DMV 규정을 미리 확인하세요. 미국은 IDP를 발급하지 않으므로 출국 전 국내에서 발급해야 합니다. 우측통행.",
+      },
+      modes: [
+        {
+          icon: "car",
+          name: "렌터카",
+          desc: "대도시 도심 외에는 자동차가 사실상 필수. 국토가 넓어 렌터카가 가장 현실적이며 주유·주차 문화 숙지가 필요합니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "device-mobile",
+          name: "Uber·Lyft",
+          desc: "공항·도심 어디서나 앱 호출이 편하고 요금이 투명. 일반 택시보다 저렴한 경우가 많습니다.",
+          rating: "추천",
+        },
+        {
+          icon: "subway",
+          name: "지하철·대중교통",
+          desc: "뉴욕·워싱턴·시카고 등 일부 대도시에서만 촘촘. 그 외 도시는 배차가 드물어 관광엔 비효율적입니다.",
+          rating: "상황별",
+        },
+        {
+          icon: "taxi",
+          name: "옐로 택시",
+          desc: "뉴욕 등 일부 도시 위주. 대체로 Uber·Lyft가 더 저렴하고 편리하며 팁 15~20% 문화가 있습니다.",
+          rating: "상황별",
+        },
+      ],
+      summary: "도시 간 이동은 렌터카 또는 국내선, 도심 이동은 Uber·Lyft가 기본. 팁 문화(15~20%)에 유의하세요.",
+      links: [
+        {
+          name: "USAGov · 비시민권자의 미국 운전 안내",
+          url: "https://www.usa.gov/non-citizen-driving",
+        },
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
   {
     id: "TH",
@@ -440,6 +538,55 @@ export const COUNTRIES: Country[] = [
         desc: "석회 성분이 많아 수돗물을 그냥 마실 수 없으며, 양치질도 생수를 사용하는 것을 적극 권장합니다.",
       },
     ],
+    transport: {
+      driving: {
+        status: "운전 가능",
+        convention: "제네바(1949)·비엔나(1968) IDP를 모두 인정. 발급받은 IDP로 최대 90일 운전할 수 있습니다.",
+        requirements: "IDP + 한국 면허 원본 + 여권 소지. 오토바이 대여 시에도 2종소형(A) 표기 IDP가 있어야 합법입니다.",
+        note: "좌측통행이며 도로가 거칠고 오토바이 사고가 잦습니다. 헬멧 미착용·무면허 오토바이 운전은 벌금·보험 미적용 위험이 있습니다.",
+      },
+      modes: [
+        {
+          icon: "device-mobile",
+          name: "Grab (그랩)",
+          desc: "앱 호출 차량·택시. 요금이 미리 확정돼 바가지 걱정이 없어 방콕·푸껫 등에서 가장 무난합니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "subway",
+          name: "BTS·MRT",
+          desc: "방콕 도심은 지상철(BTS)·지하철(MRT)이 정체를 피하는 최선. 빠르고 저렴합니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "taxi",
+          name: "미터 택시",
+          desc: "'미터 온' 요청이 필수. 미터 거부·정액 흥정 기사가 많아 Grab이 더 투명한 편입니다.",
+          rating: "상황별",
+        },
+        {
+          icon: "motorcycle",
+          name: "툭툭",
+          desc: "짧은 거리·관광 체험용. 흥정이 필수이고 실제 가성비는 낮은 편이라 사진용·재미로 접근하세요.",
+          rating: "주의",
+        },
+      ],
+      summary: "방콕은 BTS·MRT와 Grab 조합이 정답. 툭툭은 관광 체험용이지 가성비 수단은 아닙니다.",
+      links: [
+        {
+          name: "태국 육상교통국(DLT) 공식 사이트",
+          url: "https://www.dlt.go.th/en/",
+        },
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
   {
     id: "VN",
@@ -515,7 +662,7 @@ export const COUNTRIES: Country[] = [
           {
             months: [6, 7, 8, 9, 10, 11],
             temp: "26°C ~ 35°C",
-            koreanEquivalent: "우리나라의 무덥고 고온 다습한 폭염 장마철",
+            koreanEquivalent: "우리나라의 무더운 폭염·장마철",
             tip: "강수량이 압도적으로 많은 혹서기 우기입니다. 소나기가 일상적으로 찾아오며, 배수로가 일시적으로 넘칠 수 있어 방수 가방과 편안한 신발이 좋습니다.",
             items: ["방수 백팩", "일회용 우의 및 샌들", "휴대용 미니 선풍기"],
           },
@@ -562,6 +709,51 @@ export const COUNTRIES: Country[] = [
         desc: "로컬 식당에서 음료에 넣어주는 둥글고 가운데 구멍이 뚫린 얼음이 아닌 불규칙한 각얼음은 배탈을 일으킬 수 있으니 장이 예민하면 피하십시오.",
       },
     ],
+    transport: {
+      driving: {
+        status: "운전 가능",
+        convention: "한-베트남 국제운전면허 상호인정 협정(2023.7.23 발효)으로 한국 IDP 운전이 가능해졌습니다.",
+        requirements: "IDP(발급일로부터 1년 유효) + 한국 면허 원본 + 여권 소지. 오토바이는 2종소형(A) 표기 IDP가 필요합니다.",
+        note: "협정 발효 전에는 인정되지 않았습니다. 교통량이 많고 오토바이가 도로를 지배해 초보 운전자에게는 매우 위험합니다.",
+      },
+      modes: [
+        {
+          icon: "device-mobile",
+          name: "Grab (그랩)",
+          desc: "차량(GrabCar)·오토바이(GrabBike) 모두 앱 호출. 가장 싸고 빠르며 바가지가 없어 베트남 이동의 기본입니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "taxi",
+          name: "Xanh SM·정찰 택시",
+          desc: "Xanh SM(전기택시), Mai Linh, Vinasun 등 대형 정찰 브랜드는 신뢰도가 높습니다. 공항은 정찰 부스를 이용하세요.",
+          rating: "추천",
+        },
+        {
+          icon: "motorcycle",
+          name: "오토바이(그랩바이크)",
+          desc: "단거리·정체 구간에서 가장 빠르고 저렴. 헬멧 착용이 필수이며 직접 대여 운전은 사고 위험이 큽니다.",
+          rating: "상황별",
+        },
+        {
+          icon: "taxi",
+          name: "길거리 흥정 택시",
+          desc: "미터 조작·바가지 사례가 잦습니다. 되도록 Grab이나 정찰 브랜드를 이용하세요.",
+          rating: "주의",
+        },
+      ],
+      summary: "Grab(차량·바이크)이 사실상 표준. 공항택시는 반드시 정찰 부스나 대형 브랜드를 이용하세요.",
+      links: [
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
   {
     id: "FR",
@@ -708,6 +900,55 @@ export const COUNTRIES: Country[] = [
         desc: "파리 지하철을 이용하고 나갈 때까지 표를 버리지 마세요. 역 내에서 불시에 불심검문 요원이 하차 체크를 하여 무표 소지 시 즉석 벌금을 매깁니다.",
       },
     ],
+    transport: {
+      driving: {
+        status: "조건부 가능",
+        convention: "단기 체류 시 한국 면허로 운전 가능하나, 한국 면허는 비(非)라틴 문자라 IDP(또는 공식 프랑스어 번역)를 함께 소지해야 유효합니다.",
+        requirements: "IDP + 한국 면허 원본 + 여권. 렌터카는 보통 만 21세 이상, 면허 취득 1년 이상 조건이 흔합니다.",
+        note: "출국 전 국내에서 IDP를 발급해야 합니다(프랑스는 발급 안 함). 우측통행이며 원형교차로(로터리) 통행 우선순위에 주의하세요.",
+      },
+      modes: [
+        {
+          icon: "subway",
+          name: "지하철·RER·트램",
+          desc: "파리는 메트로·RER이 촘촘해 차가 필요 없습니다. Navigo 교통카드·주간권이 가성비 최고입니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "train",
+          name: "기차(SNCF·TGV)",
+          desc: "도시 간 이동은 고속열차 TGV가 빠르고 편리. 미리 예약할수록 저렴합니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "device-mobile",
+          name: "Uber·Bolt",
+          desc: "파리 등 대도시에서 앱 호출 가능. 심야·짐 많을 때 유용하나 일반 대중교통보다 비쌉니다.",
+          rating: "추천",
+        },
+        {
+          icon: "car",
+          name: "렌터카",
+          desc: "파리 시내는 주차난·혼잡으로 비추천. 프로방스·루아르 등 지방·근교 드라이브에만 권장합니다.",
+          rating: "상황별",
+        },
+      ],
+      summary: "파리는 Navigo와 메트로, 도시 간은 TGV가 정답. 렌터카는 시골 여행용으로만 쓰세요.",
+      links: [
+        {
+          name: "프랑스 공공서비스포털 · 외국 면허로 단기 운전",
+          url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F1459?lang=en",
+        },
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
   {
     id: "IT",
@@ -856,6 +1097,55 @@ export const COUNTRIES: Country[] = [
         desc: "버스나 기차 티켓을 구매하고 타서 끝이 아닌, 반드시 정류장이나 플랫폼 내부의 미니 기계에 기차표를 넣어 펀칭(개표)해야 유효합니다. 안 할 시 막대한 벌금이 나옵니다.",
       },
     ],
+    transport: {
+      driving: {
+        status: "조건부 가능",
+        convention: "비(非)EU 면허는 IDP(또는 공식 이탈리아어 번역) 동반이 법적 의무(도로교통법 제135조). 입국일로부터 12개월 유효합니다.",
+        requirements: "IDP + 한국 면허 원본 + 여권 소지. 렌터카는 보통 만 21세 이상이며 신용카드 보증이 필요합니다.",
+        note: "ZTL(도심 차량통행제한구역)은 카메라 자동 단속으로 나중에 벌금이 청구됩니다. 렌터카로 절대 진입 금지, 우측통행.",
+      },
+      modes: [
+        {
+          icon: "train",
+          name: "기차(Trenitalia·Italo)",
+          desc: "로마·피렌체·베네치아·밀라노 간 고속열차가 빠르고 편리해 도시 간 이동의 정답입니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "subway",
+          name: "지하철·버스·트램",
+          desc: "로마·밀라노 도심은 대중교통으로 충분. 승차권 개찰(각인)이 필수이며 미각인 시 벌금입니다.",
+          rating: "추천",
+        },
+        {
+          icon: "taxi",
+          name: "택시(FreeNow)",
+          desc: "공식 흰색 택시만 이용하세요. 공항 정액요금 구간이 있고 앱은 FreeNow. 호객 택시는 피하세요.",
+          rating: "상황별",
+        },
+        {
+          icon: "car",
+          name: "렌터카",
+          desc: "토스카나·아말피 등 시골·해안 드라이브에만 권장. 도심 ZTL·주차난 탓에 도시에선 비추천합니다.",
+          rating: "상황별",
+        },
+      ],
+      summary: "도시 간은 고속열차, 도심은 대중교통. 렌터카는 시골 전용이며 ZTL 진입은 절대 금물입니다.",
+      links: [
+        {
+          name: "주이탈리아 미국대사관 · 이탈리아 운전 규정 안내",
+          url: "https://it.usembassy.gov/transportation-and-driving-in-italy/",
+        },
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
   {
     id: "PH",
@@ -984,6 +1274,55 @@ export const COUNTRIES: Country[] = [
         desc: "필리핀은 모든 일처리가 한국보다 매우 느긋합니다. 식당 서빙이나 호텔 체크인이 느리더라도 화내지 말고 여유롭게 대기하는 미덕이 필요합니다.",
       },
     ],
+    transport: {
+      driving: {
+        status: "운전 가능",
+        convention: "영문으로 된 유효한 외국 면허는 입국일로부터 90일간 운전 가능. 한국 면허는 IDP를 함께 소지해야 안전합니다.",
+        requirements: "IDP + 한국 면허 원본 + 여권. 90일 초과 체류 시 LTO에서 필리핀 면허로 전환해야 합니다.",
+        note: "우측통행. 마닐라·세부의 교통 정체가 극심하고 현지 운전 매너가 거칠어 직접 운전보다 차량 호출을 권장합니다.",
+      },
+      modes: [
+        {
+          icon: "device-mobile",
+          name: "Grab (그랩)",
+          desc: "마닐라·세부에서 가장 안전·투명한 이동수단. 요금 확정으로 바가지가 없으나 피크시간 배차난·할증이 있습니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "bus",
+          name: "지프니(Jeepney)",
+          desc: "필리핀 상징 대중교통. 요금이 매우 저렴하나 노선 파악이 어려워 관광객에겐 체험용에 가깝습니다.",
+          rating: "상황별",
+        },
+        {
+          icon: "motorcycle",
+          name: "트라이시클",
+          desc: "단거리·골목 이동용 삼륜차. 관광지에선 정액 흥정이며 짧은 거리 가성비는 좋은 편입니다.",
+          rating: "상황별",
+        },
+        {
+          icon: "taxi",
+          name: "미터 택시",
+          desc: "'미터 온' 요청이 필수. 미터 거부·정액 요구가 잦아 가능하면 Grab이 더 안심입니다.",
+          rating: "주의",
+        },
+      ],
+      summary: "마닐라·세부는 Grab이 가장 안전. 지프니·트라이시클은 체험 겸 단거리용입니다.",
+      links: [
+        {
+          name: "필리핀 육상교통청(LTO) 공식 사이트",
+          url: "https://lto.gov.ph",
+        },
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
   {
     id: "AU",
@@ -1117,6 +1456,55 @@ export const COUNTRIES: Country[] = [
         desc: "호주는 보행 신호를 준수하지 않고 무단 횡단하는 행위를 경찰이 엄격히 단속하며 적발 시 자비 없이 엄청난 과태료 티켓을 발급합니다.",
       },
     ],
+    transport: {
+      driving: {
+        status: "조건부 가능",
+        convention: "한국 면허 원본 + IDP(또는 공식 영문 번역)를 함께 소지하면 운전 가능. 방문객 허용 기간은 주(州)별로 다릅니다.",
+        requirements: "IDP + 한국 면허 원본 + 여권. NSW·빅토리아는 6개월, 노던테리토리는 3개월 등 주별 상한을 확인하세요.",
+        note: "좌측통행. 도심 밖은 거리가 매우 멀고 야생동물 로드킬·장거리 운전 피로에 주의. 렌터카는 보통 만 21세 이상입니다.",
+      },
+      modes: [
+        {
+          icon: "subway",
+          name: "대중교통(Opal·Myki)",
+          desc: "시드니 Opal, 멜버른 Myki 등 교통카드로 기차·버스·트램·페리를 통합 이용. 도심 관광엔 충분합니다.",
+          rating: "강력추천",
+        },
+        {
+          icon: "device-mobile",
+          name: "Uber",
+          desc: "주요 도시 어디서나 호출 가능하고 요금이 투명. 심야·짐 많을 때 편리합니다.",
+          rating: "추천",
+        },
+        {
+          icon: "car",
+          name: "렌터카·캠퍼밴",
+          desc: "그레이트오션로드·태즈메이니아 등 자연 명소는 자동차가 필수. 좌측통행 적응과 장거리 대비가 필요합니다.",
+          rating: "추천",
+        },
+        {
+          icon: "taxi",
+          name: "택시",
+          desc: "요금이 비싼 편이라 Uber 대비 이점이 적습니다. 심야 할증에 유의하세요.",
+          rating: "상황별",
+        },
+      ],
+      summary: "도심은 교통카드(Opal·Myki)와 Uber, 자연 명소·로드트립은 렌터카가 정답입니다.",
+      links: [
+        {
+          name: "Austroads · 호주 방문 운전자 안내",
+          url: "https://austroads.gov.au/drivers-and-vehicles/overseas-drivers/visiting-drivers",
+        },
+        {
+          name: "외교부 해외안전여행 · 운전면허 상호인정 안내",
+          url: "https://0404.go.kr/bbs/contsPst/MST0000000000114/14/detail",
+        },
+        {
+          name: "한국도로교통공단 · 국제운전면허증 발급 안내",
+          url: "https://www.safedriving.or.kr/guide/larGuide051.do?menuCode=MN-PO-1215",
+        },
+      ],
+    },
   },
 ];
 
