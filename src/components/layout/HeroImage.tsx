@@ -31,9 +31,6 @@ export function HeroImage({ country }: HeroImageProps) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/10 to-transparent" />
       <div className="absolute bottom-5 left-5 lg:bottom-10 lg:left-10 text-white pr-5">
-        <span className="px-2 py-0.5 lg:px-3 lg:py-1 bg-brand-500/90 text-[10px] lg:text-xs font-bold rounded-lg mb-1.5 lg:mb-2.5 inline-block tracking-wide uppercase">
-          Real-time Travel Guide
-        </span>
         <h2 className="text-3xl lg:text-5xl font-extrabold flex items-center gap-2 lg:gap-3 tracking-tight">
           {country.name} <span className="text-2xl lg:text-4xl">{country.flag}</span>
         </h2>

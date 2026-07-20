@@ -40,19 +40,7 @@ export function ProhibitedTab({ country }: ProhibitedTabProps) {
 
   return (
     <div className="space-y-4 animate-fade-in">
-      <SectionHeader title={`${country.name} 입국 시 반입 금지·제한 물품`} icon="prohibit" />
-
-      {customs.warning && (
-        <div className="bg-rose-50 border border-rose-100 rounded-2xl p-4 flex gap-3 shadow-sm">
-          <div className="text-rose-500 mt-0.5 shrink-0">
-            <i className="ph-fill ph-warning-octagon text-xl" />
-          </div>
-          <div>
-            <p className="text-xs font-extrabold text-rose-800 mb-0.5">{country.name} 세관·검역 필수 주의사항</p>
-            <p className="text-xs text-rose-700 leading-relaxed font-medium">{customs.warning}</p>
-          </div>
-        </div>
-      )}
+      <SectionHeader title={`${country.name} 세관·검역 규정 한눈에`} icon="prohibit" />
 
       <div className="space-y-3 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-4">
         <ItemListCard
@@ -84,6 +72,18 @@ export function ProhibitedTab({ country }: ProhibitedTabProps) {
           ))}
         </div>
       </div>
+
+      {customs.warning && (
+        <div className="bg-amber-50/70 border border-amber-100 rounded-2xl p-4 flex gap-3">
+          <div className="text-amber-500 mt-0.5 shrink-0">
+            <i className="ph-fill ph-info text-lg" />
+          </div>
+          <div>
+            <p className="text-xs font-extrabold text-amber-800 mb-0.5">출국 전 한 번 더 확인하세요</p>
+            <p className="text-xs text-amber-700/90 leading-relaxed font-medium">{customs.warning}</p>
+          </div>
+        </div>
+      )}
 
       <p className="text-[10px] text-slate-400 text-center mt-2 leading-relaxed">
         * 반입 금지·제한 품목은 각국 세관·검역 당국의 규정이며 수시로 바뀝니다. 항공기 내 휴대·위탁 규정은{' '}

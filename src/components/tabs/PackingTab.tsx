@@ -68,7 +68,7 @@ export function PackingTab({ country, packing }: PackingTabProps) {
 
           {/* 데스크탑 전용 월 선택 카드 */}
           <div className="hidden lg:block bg-white rounded-2xl p-4 shadow-soft border border-slate-100">
-            <p className="text-xs font-bold text-slate-500 mb-2.5 text-center">출발할 달(Month)을 고르세요</p>
+            <p className="text-xs font-bold text-slate-500 mb-2.5 text-center">출발할 달(Month)</p>
             <MonthPicker
               selectedMonth={selectedMonth}
               onSelect={setSelectedMonth}
@@ -82,7 +82,7 @@ export function PackingTab({ country, packing }: PackingTabProps) {
         <div className="bg-white rounded-2xl shadow-soft border border-slate-100 overflow-hidden">
           {/* 모바일 전용 월 선택 */}
           <div className="p-4 bg-slate-50/50 border-b border-slate-100 lg:hidden">
-            <p className="text-xs font-bold text-slate-500 mb-2.5 text-center">출발할 달(Month)을 고르세요</p>
+            <p className="text-xs font-bold text-slate-500 mb-2.5 text-center">출발할 달(Month)</p>
             <MonthPicker
               selectedMonth={selectedMonth}
               onSelect={setSelectedMonth}
@@ -92,34 +92,32 @@ export function PackingTab({ country, packing }: PackingTabProps) {
           </div>
 
           <div className="p-5 lg:p-7">
-            <div className="flex justify-between items-start mb-1">
+            {/* 메인 훅: 한국 날씨에 빗댄 체감 + 준비 조언 */}
+            <div className="flex items-start justify-between gap-3 mb-3">
               <div>
-                <h4 className="text-2xl font-extrabold text-slate-800 tracking-tight">{currentClimatePeriod.temp}</h4>
-                <p className="text-xs text-slate-400 font-bold mt-0.5">선택 지역의 평균 최고·최저 기온</p>
+                <p className="text-[11px] font-bold text-slate-400 mb-1">
+                  {selectedMonth}월 · {selectedRegionName} 체감 가이드
+                </p>
+                <h4 className="text-xl lg:text-2xl font-black text-slate-800 leading-snug tracking-tight">
+                  딱 <span className="text-brand-600">'{currentClimatePeriod.koreanEquivalent}'</span>
+                  <br />
+                  느낌이에요
+                </h4>
               </div>
-              <div className="px-3 py-1 bg-brand-50 border border-brand-100 text-brand-600 rounded-xl text-xs font-extrabold">
-                {selectedMonth}월 기상 정보
+              <div className="px-3 py-1 bg-brand-50 border border-brand-100 text-brand-600 rounded-xl text-xs font-extrabold shrink-0">
+                {selectedMonth}월
               </div>
             </div>
 
-            <TempRangeBar tempStr={currentClimatePeriod.temp} />
-
-            <div className="my-4 flex items-center gap-2 px-3.5 py-3 bg-amber-50/60 border border-amber-100 rounded-xl text-xs font-bold text-amber-800 leading-snug">
-              <i className="ph ph-info text-base text-amber-600 shrink-0" />
-              <span>
-                이 시기 {selectedRegionName}은(는)
-                <br />
-                우리나라의{' '}
-                <span className="text-brand-600 font-black underline">{currentClimatePeriod.koreanEquivalent}</span>과 아주
-                흡사해요!
-              </span>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-4 mb-5 text-xs text-slate-600 leading-relaxed font-medium">
-              <div className="font-extrabold text-slate-700 flex items-center gap-1.5 mb-1.5">
-                <i className="ph-fill ph-lightbulb text-amber-500" /> 현지 옷차림 스타일링 솔루션
+            {/* 통합 블록: 체감 온도 바(+겉옷 강조) + 옷차림 조언을 하나로 */}
+            <div className="bg-slate-50 rounded-2xl p-4 mb-5 border border-slate-100">
+              <TempRangeBar tempStr={currentClimatePeriod.temp} />
+              <div className="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-600 leading-relaxed font-medium">
+                <div className="font-extrabold text-slate-700 flex items-center gap-1.5 mb-1.5">
+                  <i className="ph-fill ph-coat-hanger text-brand-500" /> 이렇게 입으세요
+                </div>
+                {currentClimatePeriod.tip}
               </div>
-              {currentClimatePeriod.tip}
             </div>
 
             <div className="flex items-center justify-between mb-3">

@@ -12,8 +12,10 @@ import { VisaTab } from './components/tabs/VisaTab';
 import { ProhibitedTab } from './components/tabs/ProhibitedTab';
 import { AirlineTab } from './components/tabs/AirlineTab';
 import { PackingTab } from './components/tabs/PackingTab';
+import { TransportTab } from './components/tabs/TransportTab';
 import { TipsTab } from './components/tabs/TipsTab';
 import { CountrySelectorModal } from './components/modal/CountrySelectorModal';
+import { UpdateToast } from './components/common/UpdateToast';
 
 /**
  * 앱의 조립(composition) 지점.
@@ -27,6 +29,7 @@ export default function App() {
 
   return (
     <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen shadow-2xl relative pb-20 lg:pb-0 flex flex-col">
+      <UpdateToast />
       <Header
         country={country}
         selectedCountryId={selectedCountryId}
@@ -50,6 +53,7 @@ export default function App() {
         {activeTab === 'prohibited' && <ProhibitedTab country={country} />}
         {activeTab === 'airline' && <AirlineTab country={country} />}
         {activeTab === 'packing' && <PackingTab country={country} packing={packing} />}
+        {activeTab === 'transport' && <TransportTab country={country} />}
         {activeTab === 'tips' && <TipsTab country={country} />}
       </main>
 
