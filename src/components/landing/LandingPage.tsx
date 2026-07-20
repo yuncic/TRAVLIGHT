@@ -1,4 +1,5 @@
 import { FEATURES, PAIN_POINTS, TRUST_SOURCES } from "./landingContent";
+import { trackEnter } from "../../lib/analytics";
 
 interface LandingPageProps {
   /** 'TravLight 이용하기' 클릭 시 실제 서비스로 진입 */
@@ -6,10 +7,21 @@ interface LandingPageProps {
 }
 
 /** 재사용 CTA 버튼 */
-function EnterButton({ onEnter, label }: { onEnter: () => void; label: string }) {
+function EnterButton({
+  onEnter,
+  label,
+  source,
+}: {
+  onEnter: () => void;
+  label: string;
+  source: "hero" | "final_cta";
+}) {
   return (
     <button
-      onClick={onEnter}
+      onClick={() => {
+        trackEnter(source);
+        onEnter();
+      }}
       className="focus-ring group inline-flex items-center gap-2 px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white text-base lg:text-lg font-extrabold rounded-full shadow-float transition-all active:scale-95"
     >
       {label}
@@ -42,7 +54,10 @@ export function LandingPage({ onEnter }: LandingPageProps) {
       <header className="sticky top-0 z-40 h-14 bg-white/90 backdrop-blur-md border-b border-slate-100 px-5 lg:px-10 flex items-center justify-between">
         <span className="text-xl font-black text-brand-500 tracking-wider">TRAVLIGHT</span>
         <button
-          onClick={onEnter}
+          onClick={() => {
+            trackEnter("nav");
+            onEnter();
+          }}
           className="focus-ring text-sm font-bold text-slate-500 hover:text-brand-600 transition-colors"
         >
           바로 시작 →
@@ -68,7 +83,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
             흩어진 여행 준비 정보를 TravLight 하나로 확인하세요.
           </p>
           <div className="mt-11">
-            <EnterButton onEnter={onEnter} label="TravLight 이용하기" />
+            <EnterButton onEnter={onEnter} label="TravLight 이용하기" source="hero" />
           </div>
           <div className="mt-16 flex flex-col items-center gap-1 text-slate-300">
             <span className="text-[11px] font-bold tracking-widest">SCROLL</span>
@@ -187,7 +202,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
             가고 싶은 나라를 고르면, 필요한 모든 정보가 한 화면에 펼쳐집니다.
           </p>
           <div className="mt-9">
-            <EnterButton onEnter={onEnter} label="TravLight 이용하기" />
+            <EnterButton onEnter={onEnter} label="TravLight 이용하기" source="final_cta" />
           </div>
         </div>
       </section>

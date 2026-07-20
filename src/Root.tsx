@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import App from './App';
+import { Analytics } from '@vercel/analytics/react';
 import { LandingPage } from './components/landing/LandingPage';
 
 /**
@@ -15,5 +16,10 @@ export default function Root() {
     setEntered(true);
   };
 
-  return entered ? <App /> : <LandingPage onEnter={handleEnter} />;
+  return (
+    <>
+      {entered ? <App /> : <LandingPage onEnter={handleEnter} />}
+      <Analytics />
+    </>
+  );
 }
